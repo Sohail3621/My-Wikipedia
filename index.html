@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Wikipedia</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="articles.js"></script> <!-- External script for better organization -->
+</head>
+<body>
+    <header>
+        <h1>My Wikipedia</h1>
+        <input type="text" id="search" placeholder="Search articles..." onkeyup="searchArticles()">
+    </header>
+    <main>
+        <div id="content">
+            <h2>Welcome to My WikiPedia!!!</h2>
+            <p>Click on any article to read.</p>
+            <ul id="article-list"></ul>
+            <p>will upadate soon.</p>
+            <p>more content will be added.</p>
+            <img src="./images/thank_you.jpg" alt="thank you">
+            <h2>THANK YOU</h2>
+        </div>
+    </main>
+
+    <script>
+        function searchArticles() {
+            let input = document.getElementById('search').value.toLowerCase();
+            let listItems = document.querySelectorAll('#article-list li');
+            listItems.forEach(item => {
+                let text = item.textContent.toLowerCase();
+                item.style.display = text.includes(input) ? '' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>

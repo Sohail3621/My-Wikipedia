@@ -1,0 +1,93 @@
+/* 🎨 General Page Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* 📌 Header Styling */
+header {
+    background: linear-gradient(90deg, #0077b6, #00b4d8);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 🏷️ Title */
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/* 🔍 Search Bar */
+#search {
+    width: 60%;
+    max-width: 400px;
+    padding: 10px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    text-align: center;
+    outline: none;
+    transition: 0.3s;
+}
+
+#search:focus {
+    width: 70%;
+    background-color: #e0f7fa;
+}
+
+/* 📄 Main Content */
+main {
+    text-align: center;
+    padding: 30px;
+}
+
+/* 📚 Article List */
+#article-list {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 📝 Article Links */
+#article-list li {
+    background: white;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+#article-list li:hover {
+    transform: scale(1.05);
+}
+
+#article-list a {
+    text-decoration: none;
+    color: #0077b6;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+#article-list a:hover {
+    color: #00b4d8;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    #search {
+        width: 80%;
+    }
+}

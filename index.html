@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Wikipedia</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="articles.js"></script> 
+</head>
+<body>
+    <header>
+        <h1>My Wikipedia</h1>
+        <input type="text" id="search" placeholder="Search articles..." onkeyup="searchArticles()">
+    </header>
+    <main>
+        <div id="content">
+            <h2>Welcome to My WikiPedia!!!</h2>
+            <p>Click on any article to read.</p>
+            <ul id="article-list"></ul>
+        </div>
+        <div id="no-results"  style="display: none;">
+            <p>Will update soon.</p>
+            <p>More content will be added.</p>
+            <img src="./images/thank_you.jpg" alt="thank you">
+            <h2>THANK YOU</h2>
+        </div>  
+        <div id="info-section">
+            <h2>About My Wikipedia</h2>
+            <p>This is a mini Wikipedia project that provides information about various topics. More articles will be added soon!</p>
+            <p>Stay tuned for updates and new features.</p>
+        </div>      
+    </main>
+    <script>
+        function searchArticles() {
+            let input = document.getElementById('search').value.toLowerCase();
+            let listItems = document.querySelectorAll('#article-list li');
+            let noResultsMessage = document.getElementById('no-results');
+            let found = false;
+    
+            listItems.forEach(item => {
+                let text = item.textContent.toLowerCase();
+                if (text.includes(input)) {
+                    item.style.display = ''; 
+                    found = true;
+                } else {
+                    item.style.display = 'none'; 
+                }
+            });
+    
+            
+            if (found) {
+                noResultsMessage.style.display = 'none'; 
+            } else {
+                noResultsMessage.style.display = 'block'; 
+            }
+        }
+    </script>
+    
+    
+</body>
+</html>
